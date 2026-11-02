@@ -1242,3 +1242,61 @@ body {
   }
 }
 
+
+/* Additional Dark Mode Fixes for Crisp Legibility */
+[data-theme='dark'] .progress-resume-badge {
+  background: rgba(45, 106, 79, 0.22) !important;
+  border-color: rgba(82, 183, 136, 0.35) !important;
+  color: #74c69d !important;
+}
+
+[data-theme='dark'] .chapter-row.currently-reading {
+  background: rgba(45, 106, 79, 0.2) !important;
+  border-color: rgba(82, 183, 136, 0.35) !important;
+}
+
+[data-theme='dark'] .chapter-row.currently-reading .chapter-title-text {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+[data-theme='dark'] .chapter-badge-read {
+  background: #1b4332 !important;
+  color: #95d5b2 !important;
+}
+
+[data-theme='dark'] .modal-tab-btn {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .modal-tab-btn:hover {
+  color: #f1f5f9;
+}
+
+[data-theme='dark'] .modal-tab-btn.active {
+  color: #52b788;
+  border-bottom-color: #52b788;
+}
+
+[data-theme='dark'] .volume-meta-right {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .chapter-number-tag {
+  background: #1e242d;
+  color: #cbd5e1;
+  border-color: #2e3846;
+}
+
+[data-theme='dark'] .chapter-meta-right {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .resume-reading-btn {
+  background: #2d6a4f !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .resume-reading-btn:hover {
+  background: #40916c !important;
+}

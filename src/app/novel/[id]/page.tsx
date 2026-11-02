@@ -168,8 +168,8 @@ export default function NovelDetailPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', background: '#fcfcfc', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ textAlign: 'center', color: '#17382d', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+      <div style={{ minHeight: '100vh', background: 'var(--bg-color)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ textAlign: 'center', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
           <Loader2 size={36} className="animate-spin" />
           <p style={{ fontWeight: 600, fontSize: 16 }}>Retrieving novel from Supabase database...</p>
         </div>
@@ -179,7 +179,7 @@ export default function NovelDetailPage() {
 
   if (!novel) {
     return (
-      <div style={{ minHeight: '100vh', background: '#fcfcfc', padding: 48, textAlign: 'center' }}>
+      <div style={{ minHeight: '100vh', background: 'var(--bg-color)', padding: 48, textAlign: 'center' }}>
         <h2>Novel not found in database</h2>
         <Link href="/" className="back-link" style={{ marginTop: 16 }}>
           ← Back to All Novels
@@ -189,7 +189,7 @@ export default function NovelDetailPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: '#fcfcfc' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--bg-color)' }}>
       {/* Top Header */}
       <header className="top-nav">
         <Link href="/" className="brand-section">
@@ -214,7 +214,7 @@ export default function NovelDetailPage() {
 
         {/* Reader View: Chapter content loaded from database */}
         {activeReadingChapter ? (
-          <div className="volume-card" style={{ padding: '36px 44px', background: 'white' }}>
+          <div className="volume-card" className="volume-card" style={{ padding: '36px 44px', background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}>
             {/* Top Navigation Row in Reader */}
             <div className="reader-nav-bar">
               <button
@@ -272,13 +272,13 @@ export default function NovelDetailPage() {
               <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6 }}>
                 {activeReadingChapter.title}
               </h1>
-              <p style={{ color: '#6b7280', fontSize: 13.5 }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: 13.5 }}>
                 {novel.title} • {activeReadingChapter.wordCount} • Released {activeReadingChapter.releaseDate}
               </p>
             </div>
 
             {loadingChapter ? (
-              <div style={{ padding: '60px 0', textAlign: 'center', color: '#17382d' }}>
+              <div style={{ padding: '60px 0', textAlign: 'center', color: 'var(--text-main)' }}>
                 <Loader2 size={30} className="animate-spin" />
                 <p style={{ marginTop: 8, fontSize: 14 }}>Loading chapter from database...</p>
               </div>
@@ -310,7 +310,7 @@ export default function NovelDetailPage() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#6b7280',
+                  color: 'var(--text-muted)',
                   fontSize: 13.5,
                   cursor: 'pointer',
                   fontWeight: 600
@@ -348,9 +348,9 @@ export default function NovelDetailPage() {
             </div>
           </div>
         ) : (
-          <div style={{ background: 'white', borderRadius: 24, border: '1px solid #ebecee', overflow: 'hidden', boxShadow: 'var(--card-shadow)' }}>
+          <div style={{ background: 'var(--surface)', borderRadius: 24, border: '1px solid var(--border-subtle)', overflow: 'hidden', boxShadow: 'var(--card-shadow)' }}>
             {/* Novel Profile Header */}
-            <div className="modal-header-banner" style={{ background: 'white', padding: '36px 40px' }}>
+            <div className="modal-header-banner" style={{ background: 'var(--surface)', padding: '36px 40px', borderBottom: '1px solid var(--border-subtle)' }}>
               {novel.coverImage ? (
                 <img
                   src={novel.coverImage}
@@ -365,8 +365,8 @@ export default function NovelDetailPage() {
                     width: 160,
                     height: 220,
                     borderRadius: 16,
-                    background: '#f1f5f9',
-                    border: '1.5px dashed #cbd5e1',
+                    background: 'var(--surface-secondary)',
+                    border: '1.5px dashed var(--border-subtle)',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -475,10 +475,10 @@ export default function NovelDetailPage() {
               {activeTab === 'volumes' ? (
                 <div>
                   <div style={{ marginBottom: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: 13.5, color: '#4b5563', fontWeight: 700 }}>
+                    <span style={{ fontSize: 13.5, color: 'var(--text-main)', fontWeight: 700 }}>
                       TABLE OF CONTENTS — Organized by Volume
                     </span>
-                    <span style={{ fontSize: 13, color: '#9ca3af' }}>
+                    <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>
                       Total: {novel.totalChapters} Chapters
                     </span>
                   </div>
@@ -571,7 +571,7 @@ export default function NovelDetailPage() {
               ) : (
                 <div>
                   <h3 style={{ fontSize: 18, fontWeight: 800, marginBottom: 12 }}>Synopsis</h3>
-                  <p style={{ color: '#4b5563', lineHeight: 1.8, fontSize: 15, marginBottom: 28 }}>
+                  <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: 15, marginBottom: 28 }}>
                     {novel.description}
                   </p>
 
@@ -590,7 +590,7 @@ export default function NovelDetailPage() {
                       <span
                         key={t}
                         className="finish-pill"
-                        style={{ background: '#eaf5ee', color: '#1b663e', borderColor: '#d1fae5', padding: '6px 14px', fontSize: 13 }}
+                        style={{ background: 'var(--badge-green-bg)', color: 'var(--badge-green-text)', borderColor: 'var(--badge-green-border)', padding: '6px 14px', fontSize: 13 }}
                       >
                         {t}
                       </span>

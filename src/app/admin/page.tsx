@@ -318,7 +318,7 @@ export default function AdminPortalPage() {
   // -------------------------------------------------------------
   if (!isAuthenticated) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#f8fafc' }}>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-color)' }}>
         <header className="top-nav">
           <Link href="/" className="brand-section">
             <div className="brand-logo">N</div>
@@ -332,8 +332,8 @@ export default function AdminPortalPage() {
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
           <div
             style={{
-              background: '#fff',
-              border: '1px solid #e2e8f0',
+              background: 'var(--surface)',
+              border: '1px solid var(--border-subtle)',
               borderRadius: '20px',
               padding: '40px',
               maxWidth: '420px',
@@ -357,17 +357,17 @@ export default function AdminPortalPage() {
               >
                 <Lock size={28} />
               </div>
-              <h1 style={{ fontSize: '24px', fontWeight: 800, color: '#111827', letterSpacing: '-0.02em' }}>
+              <h1 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.02em' }}>
                 Admin Portal
               </h1>
-              <p style={{ fontSize: '14px', color: '#64748b', marginTop: '6px' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginTop: '6px' }}>
                 Enter your security passkey to manage novels, volumes, and chapters.
               </p>
             </div>
 
             <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                   Passkey / Secret
                 </label>
                 <input
@@ -414,8 +414,8 @@ export default function AdminPortalPage() {
               </button>
             </form>
 
-            <div style={{ marginTop: '24px', textAlign: 'center', fontSize: '12px', color: '#94a3b8' }}>
-              Connected to Supabase Project: <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px' }}>novelo</code>
+            <div style={{ marginTop: '24px', textAlign: 'center', fontSize: '12px', color: 'var(--text-muted)' }}>
+              Connected to Supabase Project: <code style={{ background: 'var(--surface-secondary)', padding: '2px 6px', borderRadius: '4px' }}>novelo</code>
             </div>
           </div>
         </div>
@@ -427,7 +427,7 @@ export default function AdminPortalPage() {
   // Authenticated Admin Dashboard Layout
   // -------------------------------------------------------------
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#f8fafc' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-color)' }}>
       {/* Toast Notification */}
       {toastMessage && (
         <div
@@ -487,11 +487,11 @@ export default function AdminPortalPage() {
               gap: '6px',
               fontSize: '13px',
               fontWeight: 600,
-              color: '#475569',
+              color: 'var(--text-muted)',
               textDecoration: 'none',
               padding: '8px 14px',
               borderRadius: '9999px',
-              background: '#f1f5f9'
+              background: 'var(--surface-secondary)'
             }}
           >
             <Eye size={15} />
@@ -555,7 +555,7 @@ export default function AdminPortalPage() {
               flex: 1,
               display: 'flex',
               alignItems: 'center',
-              background: '#ffffff',
+              background: 'var(--surface)',
               border: '1.5px solid #e2e8f0',
               borderRadius: '9999px',
               padding: '10px 20px',
@@ -573,7 +573,7 @@ export default function AdminPortalPage() {
                 border: 'none',
                 outline: 'none',
                 fontSize: '14px',
-                color: '#1e293b',
+                color: 'var(--text-main)',
                 fontWeight: 500
               }}
             />
@@ -583,7 +583,7 @@ export default function AdminPortalPage() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#94a3b8',
+                  color: 'var(--text-muted)',
                   cursor: 'pointer',
                   fontSize: '13px',
                   marginLeft: '8px'
@@ -600,9 +600,9 @@ export default function AdminPortalPage() {
           {/* Left Column: All Novels as Folders */}
           <div
             style={{
-              background: '#ffffff',
+              background: 'var(--surface)',
               borderRadius: '20px',
-              border: '1px solid #e2e8f0',
+              border: '1px solid var(--border-subtle)',
               padding: '24px',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.03)'
             }}
@@ -618,7 +618,7 @@ export default function AdminPortalPage() {
               }}
             >
               <div>
-                <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a' }}>
+                <h2 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-main)' }}>
                   Novels
                 </h2>
               </div>
@@ -626,8 +626,8 @@ export default function AdminPortalPage() {
                 style={{
                   fontSize: '12px',
                   fontWeight: 700,
-                  background: '#f1f5f9',
-                  color: '#475569',
+                  background: 'var(--surface-secondary)',
+                  color: 'var(--text-muted)',
                   padding: '4px 10px',
                   borderRadius: '9999px'
                 }}
@@ -641,10 +641,10 @@ export default function AdminPortalPage() {
                 <Loader2 size={28} className="animate-spin" color="#17382d" />
               </div>
             ) : filteredNovels.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '48px 20px', color: '#64748b' }}>
+              <div style={{ textAlign: 'center', padding: '48px 20px', color: 'var(--text-muted)' }}>
                 <Folder size={40} color="#cbd5e1" style={{ marginBottom: '12px' }} />
                 <p style={{ fontWeight: 600 }}>No novels found.</p>
-                <p style={{ fontSize: '13px', color: '#94a3b8' }}>Click "+ New Novel" to create your first folder.</p>
+                <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Click "+ New Novel" to create your first folder.</p>
               </div>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -659,7 +659,7 @@ export default function AdminPortalPage() {
                         border: '1px solid #e5e7eb',
                         borderRadius: '12px',
                         overflow: 'hidden',
-                        background: '#ffffff',
+                        background: 'var(--surface)',
                         transition: 'all 0.15s ease'
                       }}
                     >
@@ -689,7 +689,7 @@ export default function AdminPortalPage() {
                             )}
                           </span>
                           <div style={{ minWidth: 0, overflow: 'hidden' }}>
-                            <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#111827', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            <div style={{ fontSize: '14.5px', fontWeight: 700, color: 'var(--text-main)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                               {novel.title}
                             </div>
                             <div style={{ fontSize: '12px', color: '#6b7280', marginTop: '1px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -774,13 +774,13 @@ export default function AdminPortalPage() {
                       {isNovelOpen && (
                         <div style={{ padding: '12px 14px 14px 34px', background: '#fafbfc' }}>
                           {!detailed ? (
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 0', fontSize: '13px', color: '#64748b' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 0', fontSize: '13px', color: 'var(--text-muted)' }}>
                               <Loader2 size={16} className="animate-spin" />
                               Loading volumes from Supabase...
                             </div>
                           ) : detailed.volumeList.length === 0 ? (
-                            <div style={{ padding: '14px', background: '#ffffff', borderRadius: '10px', border: '1px dashed #cbd5e1', textAlign: 'center' }}>
-                              <p style={{ fontSize: '13px', color: '#64748b', marginBottom: '8px' }}>
+                            <div style={{ padding: '14px', background: 'var(--surface)', borderRadius: '10px', border: '1px dashed #cbd5e1', textAlign: 'center' }}>
+                              <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '8px' }}>
                                 No volumes created in this novel folder yet.
                               </p>
                               <button
@@ -808,9 +808,9 @@ export default function AdminPortalPage() {
                                   <div
                                     key={vol.id}
                                     style={{
-                                      border: '1px solid #e2e8f0',
+                                      border: '1px solid var(--border-subtle)',
                                       borderRadius: '10px',
-                                      background: '#ffffff',
+                                      background: 'var(--surface)',
                                       overflow: 'hidden'
                                     }}
                                   >
@@ -828,19 +828,19 @@ export default function AdminPortalPage() {
                                       onClick={() => toggleVolumeFolder(vol.id)}
                                     >
                                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                        <span style={{ color: '#64748b', display: 'flex' }}>
+                                        <span style={{ color: 'var(--text-muted)', display: 'flex' }}>
                                           {isVolOpen ? <ChevronDown size={15} /> : <ChevronRight size={15} />}
                                         </span>
                                         <Layers size={17} color="#2563eb" />
-                                        <span style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b' }}>
+                                        <span style={{ fontSize: '13.5px', fontWeight: 700, color: 'var(--text-main)' }}>
                                           Vol. {vol.volumeNumber}: {vol.title}
                                         </span>
                                         <span
                                           style={{
                                             fontSize: '11px',
-                                            color: '#64748b',
-                                            background: '#f8fafc',
-                                            border: '1px solid #e2e8f0',
+                                            color: 'var(--text-muted)',
+                                            background: 'var(--bg-color)',
+                                            border: '1px solid var(--border-subtle)',
                                             padding: '1px 6px',
                                             borderRadius: '9999px'
                                           }}
@@ -901,9 +901,9 @@ export default function AdminPortalPage() {
 
                                     {/* Chapters List inside Volume */}
                                     {isVolOpen && (
-                                      <div style={{ padding: '8px 10px 10px 24px', background: '#f8fafc', borderTop: '1px solid #f1f5f9' }}>
+                                      <div style={{ padding: '8px 10px 10px 24px', background: 'var(--bg-color)', borderTop: '1px solid #f1f5f9' }}>
                                         {vol.chapters.length === 0 ? (
-                                          <div style={{ padding: '10px', textAlign: 'center', fontSize: '12px', color: '#94a3b8' }}>
+                                          <div style={{ padding: '10px', textAlign: 'center', fontSize: '12px', color: 'var(--text-muted)' }}>
                                             No chapters yet. Click "+ Add Chapter".
                                           </div>
                                         ) : (
@@ -940,15 +940,15 @@ export default function AdminPortalPage() {
                                                         fontFamily: 'JetBrains Mono, monospace',
                                                         fontSize: '11px',
                                                         fontWeight: 700,
-                                                        background: '#f1f5f9',
+                                                        background: 'var(--surface-secondary)',
                                                         padding: '1px 6px',
                                                         borderRadius: '4px',
-                                                        color: '#334155'
+                                                        color: 'var(--text-main)'
                                                       }}
                                                     >
                                                       Ch. {ch.number}
                                                     </span>
-                                                    <span style={{ fontSize: '13px', fontWeight: 600, color: '#1e293b' }}>
+                                                    <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-main)' }}>
                                                       {ch.title}
                                                     </span>
                                                   </div>
@@ -957,7 +957,7 @@ export default function AdminPortalPage() {
                                                     style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
                                                     onClick={(e) => e.stopPropagation()}
                                                   >
-                                                    <span style={{ fontSize: '11px', color: '#94a3b8' }}>
+                                                    <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
                                                       {ch.wordCount}
                                                     </span>
                                                     <button
@@ -1001,9 +1001,9 @@ export default function AdminPortalPage() {
           {selectedChapter && (
             <div
               style={{
-                background: '#ffffff',
+                background: 'var(--surface)',
                 borderRadius: '20px',
-                border: '1px solid #e2e8f0',
+                border: '1px solid var(--border-subtle)',
                 padding: '28px',
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.03)',
                 display: 'flex',
@@ -1025,11 +1025,11 @@ export default function AdminPortalPage() {
                     >
                       Chapter {selectedChapter.chapter.number}
                     </span>
-                    <span style={{ fontSize: '12px', color: '#64748b' }}>
+                    <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
                       {selectedChapter.chapter.wordCount} • Released {selectedChapter.chapter.releaseDate}
                     </span>
                   </div>
-                  <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#111827', wordBreak: 'break-word', lineHeight: 1.3 }}>
+                  <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-main)', wordBreak: 'break-word', lineHeight: 1.3 }}>
                     {selectedChapter.chapter.title}
                   </h3>
                 </div>
@@ -1059,8 +1059,8 @@ export default function AdminPortalPage() {
                   <button
                     onClick={() => setSelectedChapter(null)}
                     style={{
-                      background: '#f1f5f9',
-                      color: '#475569',
+                      background: 'var(--surface-secondary)',
+                      color: 'var(--text-muted)',
                       border: 'none',
                       borderRadius: '9999px',
                       padding: '8px 12px',
@@ -1115,17 +1115,17 @@ export default function AdminPortalPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <div style={{ padding: '24px 28px', borderBottom: '1px solid #f1f5f9' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 800, color: '#111827' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-main)' }}>
                 Create New Novel
               </h2>
-              <p style={{ fontSize: '13px', color: '#64748b', marginTop: '4px' }}>
+              <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '4px' }}>
                 Enter the novel title and basic info. Once created, you can add volumes inside it.
               </p>
             </div>
 
             <form onSubmit={handleCreateNovel} style={{ padding: '24px 28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                   Novel Title *
                 </label>
                 <input
@@ -1147,7 +1147,7 @@ export default function AdminPortalPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                   Category / Genre
                 </label>
                 <select
@@ -1174,7 +1174,7 @@ export default function AdminPortalPage() {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                     Author
                   </label>
                   <input
@@ -1193,7 +1193,7 @@ export default function AdminPortalPage() {
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                     Aspect / Subtitle
                   </label>
                   <input
@@ -1214,7 +1214,7 @@ export default function AdminPortalPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                   Cover Image URL (Optional)
                 </label>
                 <input
@@ -1234,7 +1234,7 @@ export default function AdminPortalPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                   Synopsis / Description
                 </label>
                 <textarea
@@ -1303,17 +1303,17 @@ export default function AdminPortalPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <div style={{ padding: '24px 28px', borderBottom: '1px solid #f1f5f9' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 800, color: '#111827' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-main)' }}>
                 Create Volume
               </h2>
-              <p style={{ fontSize: '13px', color: '#64748b', marginTop: '4px' }}>
+              <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '4px' }}>
                 Only the title and volume details are required.
               </p>
             </div>
 
             <form onSubmit={handleCreateVolume} style={{ padding: '24px 28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                   Volume Title *
                 </label>
                 <input
@@ -1335,7 +1335,7 @@ export default function AdminPortalPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                   Volume Description / Arc notes
                 </label>
                 <input
@@ -1403,17 +1403,17 @@ export default function AdminPortalPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <div style={{ padding: '24px 28px', borderBottom: '1px solid #f1f5f9' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 800, color: '#111827' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--text-main)' }}>
                 Write New Chapter
               </h2>
-              <p style={{ fontSize: '13px', color: '#64748b', marginTop: '4px' }}>
+              <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '4px' }}>
                 Chapters store their full reading text directly in the database.
               </p>
             </div>
 
             <form onSubmit={handleCreateChapter} style={{ padding: '24px 28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: 'var(--text-main)', marginBottom: '6px' }}>
                   Chapter Title *
                 </label>
                 <input
@@ -1436,10 +1436,10 @@ export default function AdminPortalPage() {
 
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
-                  <label style={{ fontSize: '13px', fontWeight: 700, color: '#334155' }}>
+                  <label style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-main)' }}>
                     Chapter Content *
                   </label>
-                  <span style={{ fontSize: '12px', color: '#64748b' }}>
+                  <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
                     {newChapterContent.trim() ? newChapterContent.trim().split(/\s+/).length : 0} words
                   </span>
                 </div>
