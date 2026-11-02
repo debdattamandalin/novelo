@@ -1300,3 +1300,67 @@ body {
 [data-theme='dark'] .resume-reading-btn:hover {
   background: #40916c !important;
 }
+
+/* Additional Dark Mode Contrast Fixes */
+[data-theme='dark'] .back-link {
+  color: #74c69d !important;
+}
+
+[data-theme='dark'] .back-link:hover {
+  color: #95d5b2 !important;
+}
+
+[data-theme='dark'] .category-chip.active {
+  background: #2d6a4f !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .volume-number-pill {
+  background: #2d6a4f !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .volume-card.open {
+  border-color: #3b4352 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme='dark'] .chapter-read-btn {
+  color: #74c69d !important;
+}
+
+[data-theme='dark'] .hero-welcome-badge {
+  background-color: rgba(45, 106, 79, 0.25) !important;
+  color: #74c69d !important;
+  border: 1px solid rgba(82, 183, 136, 0.3) !important;
+}
+
+[data-theme='dark'] .novel-badge-new {
+  background: #181c22 !important;
+  color: #74c69d !important;
+  border: 1px solid #2d3440 !important;
+}
+
+[data-theme='dark'] .large-search-button {
+  background-color: #2d6a4f !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .large-search-button:hover {
+  background-color: #40916c !important;
+}
+
+[data-theme='dark'] .large-search-bar:focus-within {
+  border-color: #52b788 !important;
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(82, 183, 136, 0.25) !important;
+}
+
+[data-theme='dark'] .brand-logo {
+  background-color: #2d6a4f !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .quick-count-badge {
+  background: #2d6a4f !important;
+  color: #ffffff !important;
+}

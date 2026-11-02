@@ -214,20 +214,20 @@ export default function NovelDetailPage() {
 
         {/* Reader View: Chapter content loaded from database */}
         {activeReadingChapter ? (
-          <div className="volume-card" className="volume-card" style={{ padding: '36px 44px', background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}>
+          <div className="volume-card" style={{ padding: '36px 44px', background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}>
             {/* Top Navigation Row in Reader */}
             <div className="reader-nav-bar">
               <button
                 onClick={() => setActiveReadingChapter(null)}
                 style={{
-                  background: '#f3f4f6',
-                  border: 'none',
+                  background: 'var(--surface-secondary)',
+                  border: '1px solid var(--border-subtle)',
                   padding: '8px 16px',
                   borderRadius: 9999,
                   cursor: 'pointer',
                   fontSize: 13,
                   fontWeight: 600,
-                  color: '#374151',
+                  color: 'var(--text-main)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 6
