@@ -225,7 +225,7 @@ export async function createNovelInDB(novel: {
     author: novel.author || 'Anonymous',
     aspect_subtitle: novel.aspectSubtitle || 'Fantasy / Adventure',
     description: novel.description || '',
-    cover_image: novel.coverImage || 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1000',
+    cover_image: novel.coverImage || '',
     badge: novel.badge || 'New',
     format_badge: novel.formatBadge || 'WEB NOVEL',
     status: novel.status || 'Ongoing',

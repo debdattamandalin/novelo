@@ -9,7 +9,8 @@ import {
   Layers,
   Sparkles,
   X,
-  Loader2
+  Loader2,
+  Image as ImageIcon
 } from 'lucide-react';
 import { Novel } from '@/utils/supabaseNovels';
 import { getAllProgress, ReadingProgress } from '@/utils/progress';
@@ -174,12 +175,31 @@ export default function NovelsDirectoryPage() {
               >
                 {/* Media with top-left badge and bottom-right pill */}
                 <div className="card-media">
-                  <img
-                    src={novel.coverImage}
-                    alt={novel.title}
-                    className="card-img"
-                    loading="lazy"
-                  />
+                  {novel.coverImage ? (
+                    <img
+                      src={novel.coverImage}
+                      alt={novel.title}
+                      className="card-img"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        background: '#f1f5f9',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#94a3b8',
+                        gap: '6px'
+                      }}
+                    >
+                      <ImageIcon size={32} strokeWidth={1.5} color="#cbd5e1" />
+                      <span style={{ fontSize: '12px', fontWeight: 600, color: '#94a3b8' }}>No Image</span>
+                    </div>
+                  )}
                   {novel.badge && (
                     <span className="badge-top-left">{novel.badge}</span>
                   )}

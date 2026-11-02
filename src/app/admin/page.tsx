@@ -75,6 +75,7 @@ export default function AdminPortalPage() {
   const [newNovelAuthor, setNewNovelAuthor] = useState('');
   const [newNovelAspect, setNewNovelAspect] = useState('');
   const [newNovelDesc, setNewNovelDesc] = useState('');
+  const [newNovelCover, setNewNovelCover] = useState('');
 
   const [newVolumeTitle, setNewVolumeTitle] = useState('');
   const [newVolumeDesc, setNewVolumeDesc] = useState('');
@@ -175,7 +176,8 @@ export default function AdminPortalPage() {
       category: newNovelCategory,
       author: newNovelAuthor.trim() || 'Anonymous',
       aspectSubtitle: newNovelAspect.trim() || 'Fantasy / Adventure',
-      description: newNovelDesc.trim() || 'A newly published web novel.'
+      description: newNovelDesc.trim() || 'A newly published web novel.',
+      coverImage: newNovelCover.trim() || ''
     });
 
     if (created) {
@@ -184,6 +186,7 @@ export default function AdminPortalPage() {
       setNewNovelAuthor('');
       setNewNovelAspect('');
       setNewNovelDesc('');
+      setNewNovelCover('');
       setIsCreateNovelOpen(false);
       await loadNovels();
       // automatically open its folder
@@ -1203,6 +1206,26 @@ export default function AdminPortalPage() {
                     }}
                   />
                 </div>
+              </div>
+
+              <div>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#334155', marginBottom: '6px' }}>
+                  Cover Image URL (Optional)
+                </label>
+                <input
+                  type="url"
+                  placeholder="Leave empty for 'No Image' placeholder, or paste image URL"
+                  value={newNovelCover}
+                  onChange={(e) => setNewNovelCover(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 14px',
+                    borderRadius: '10px',
+                    border: '1.5px solid #cbd5e1',
+                    fontSize: '14px',
+                    outline: 'none'
+                  }}
+                />
               </div>
 
               <div>

@@ -19,7 +19,8 @@ import {
   ChevronLeft,
   CheckCircle2,
   Sparkles,
-  Loader2
+  Loader2,
+  Image as ImageIcon
 } from 'lucide-react';
 import { Novel, Chapter, getNovelWithVolumesAndChapters, getChapterContentFromDB } from '@/utils/supabaseNovels';
 import { getNovelProgress, saveNovelProgress, ReadingProgress } from '@/utils/progress';
@@ -365,12 +366,35 @@ export default function NovelDetailPage() {
           <div style={{ background: 'white', borderRadius: 24, border: '1px solid #ebecee', overflow: 'hidden', boxShadow: 'var(--card-shadow)' }}>
             {/* Novel Profile Header */}
             <div className="modal-header-banner" style={{ background: 'white', padding: '36px 40px' }}>
-              <img
-                src={novel.coverImage}
-                alt={novel.title}
-                className="modal-cover-thumb"
-                style={{ width: 160, height: 220, borderRadius: 16 }}
-              />
+              {novel.coverImage ? (
+                <img
+                  src={novel.coverImage}
+                  alt={novel.title}
+                  className="modal-cover-thumb"
+                  style={{ width: 160, height: 220, borderRadius: 16 }}
+                />
+              ) : (
+                <div
+                  className="modal-cover-thumb"
+                  style={{
+                    width: 160,
+                    height: 220,
+                    borderRadius: 16,
+                    background: '#f1f5f9',
+                    border: '1.5px dashed #cbd5e1',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#94a3b8',
+                    gap: 8,
+                    flexShrink: 0
+                  }}
+                >
+                  <ImageIcon size={36} strokeWidth={1.5} color="#cbd5e1" />
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#94a3b8' }}>No Cover</span>
+                </div>
+              )}
 
               <div className="modal-header-details">
                 {/* Saved reading progress banner if available */}
