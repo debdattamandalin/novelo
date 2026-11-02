@@ -35,6 +35,7 @@ import {
   deleteVolumeFromDB,
   deleteChapterFromDB
 } from '@/utils/supabaseNovels';
+import FormattedChapterContent from '@/components/FormattedChapterContent';
 
 export default function AdminPortalPage() {
   // Authentication state (Simple passkey or PIN login for the admin portal)
@@ -1078,8 +1079,8 @@ export default function AdminPortalPage() {
               <div
                 style={{
                   flex: 1,
-                  background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
+                  background: 'var(--surface-secondary)',
+                  border: '1px solid var(--border-subtle)',
                   borderRadius: '14px',
                   padding: '24px',
                   overflowY: 'auto',
@@ -1087,12 +1088,16 @@ export default function AdminPortalPage() {
                   fontFamily: 'Georgia, serif',
                   fontSize: '16px',
                   lineHeight: '1.8',
-                  color: '#1e293b',
-                  whiteSpace: 'pre-wrap'
+                  color: 'var(--reader-text)'
                 }}
               >
-                {selectedChapter.chapter.content ||
-                  'Content loaded directly from Supabase database. You can read the full text seamlessly in the reader.'}
+                {selectedChapter.chapter.content ? (
+                  <FormattedChapterContent content={selectedChapter.chapter.content} />
+                ) : (
+                  <p style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
+                    Content loaded directly from Supabase database. You can read the full text seamlessly in the reader.
+                  </p>
+                )}
               </div>
             </div>
           )}

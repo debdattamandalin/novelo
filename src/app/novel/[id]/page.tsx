@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { Novel, Chapter, getNovelWithVolumesAndChapters, getChapterContentFromDB } from '@/utils/supabaseNovels';
 import { getNovelProgress, saveNovelProgress, ReadingProgress } from '@/utils/progress';
+import FormattedChapterContent from '@/components/FormattedChapterContent';
 
 export default function NovelDetailPage() {
   const params = useParams();
@@ -284,27 +285,11 @@ export default function NovelDetailPage() {
             ) : (
               <div className="reader-body">
                 {activeReadingChapter.content ? (
-                  activeReadingChapter.content.split('\n\n').map((para, i) => (
-                    <p key={i}>{para}</p>
-                  ))
+                  <FormattedChapterContent content={activeReadingChapter.content} />
                 ) : (
-                  <>
-                    <p>
-                      The oil lamp flickered as twilight settled over the gaslit streets of the ancient borough. Klein gripped the copper talisman tight within his pocket, feeling the cold metal gradually absorb the warmth of his fingers.
-                    </p>
-                    <p>
-                      Whispers coiled like serpentine shadows at the periphery of his consciousness, echoing languages forgotten by mortal men. Step by step, the cadence of the nocturnal clock chimed through the damp mist of Backlund.
-                    </p>
-                    <p>
-                      <em>"Fate is never a straight line,"</em> he murmured quietly to himself, stepping across the ancient threshold. A world of crimson mysteries and hidden deities awaited beneath the veil of reality.
-                    </p>
-                    <p>
-                      As the crimson moon ascended higher into the velvet sky, the gears of the grand cathedral turned in measured, rhythmic resonance, heralding an age where ancient powers would stir once more and ordinary mortals would grasp the potion of beyonders.
-                    </p>
-                    <p>
-                      He took a deep breath, steeling his resolve. Whatever trial awaited behind that ironbound door, turning back was no longer an option.
-                    </p>
-                  </>
+                  <p style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
+                    No content available for this chapter.
+                  </p>
                 )}
               </div>
             )}
